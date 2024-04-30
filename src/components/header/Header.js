@@ -1,21 +1,10 @@
 import React from "react";
-import NavButton from "../navbutton/NavButton";
 import AnimatedCircle from "../animatedCircle/AnimatedCircle";
+import Link from "next/link";
+import NavButton from "../navbutton/NavButton";
 
 export default function Header() {
   return (
-    // <div className="grid grid-cols-1 gap-4 lg:grid lg:grid-cols-2 lg:place-items-center lg:px-10 bg-green-500">
-    //   <div className="order-2 lg:order-none">
-    //     <h1>Full Stack Web Design & Development Service</h1>
-    //     <p>
-    //       Discover a more sophisticated approach to web development with grade-A
-    //       web apps that can transform operations, profitability, and scale for
-    //       your business.
-    //     </p>
-    //     <NavButton />
-    //   </div>
-    //   <div className="bg-red-500 w-96 h-96 order-1 lg:order-none"></div>
-    // </div>
     <div className="relative grid grid-cols-1 gap-4 lg:grid lg:grid-cols-2 lg:place-items-center lg:px-10 py-10 lg:py-20">
       <div className="order-2 mt-20 lg:order-none text-center lg:text-left">
         <h1 className="text-3xl lg:text-5xl font-bold">
@@ -27,7 +16,9 @@ export default function Header() {
           your business.
         </p>
         <div className="mt-8 lg:mt-12">
-          <NavButton />
+          <Link href="/projectIdea">
+            <NavButton title="Discuss your project idea" />
+          </Link>
         </div>
         <div className="mt-28">
           <p>Trusted by:</p>

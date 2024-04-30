@@ -49,7 +49,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -100,7 +100,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="px-2">
-            <NavButton />
+            <NavButton title="Contact Us" />
           </li>
         </ul>
       </div>

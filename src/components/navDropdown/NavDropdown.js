@@ -11,7 +11,7 @@ const NavDropdown = (props) => {
     setIsOpen(!isOpen);
   };
   const leaveDropDown = () => {
-    setIsOpen(null);
+    setIsOpen(false);
   };
 
   const handleItemClick = (item) => {
