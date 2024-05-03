@@ -1,4 +1,53 @@
+"use client";
+import { useState } from "react";
+
 export default function FormSec() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  const onClickHandler = (e) => {
+    e.preventDefault()
+    try {
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        firstName: firstName,
+        lastName: lastName,
+        company: company,
+        email: email,
+        phone: phone,
+        message: message,
+      });
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      fetch("http://localhost:3000/api/sendMail", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
+    } catch (error) {
+      console.log('error', error)
+    }
+    finally{
+      setFirstName("")
+      setLastName("")
+      setCompany("")
+      setEmail("")
+      setPhone("")
+      setMessage("")
+    }
+  };
+
   return (
     <div class="bg-gray-100 px-10 lg:px-16 rounded-md">
       <div
@@ -18,6 +67,8 @@ export default function FormSec() {
             </label>
             <div class="mt-2.5">
               <input
+                onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
                 type="text"
                 name="first-name"
                 id="first-name"
@@ -35,6 +86,8 @@ export default function FormSec() {
             </label>
             <div class="mt-2.5">
               <input
+                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
                 type="text"
                 name="last-name"
                 id="last-name"
@@ -52,6 +105,8 @@ export default function FormSec() {
             </label>
             <div class="mt-2.5">
               <input
+                onChange={(e) => setCompany(e.target.value)}
+                value={company}
                 type="text"
                 name="company"
                 id="company"
@@ -69,6 +124,8 @@ export default function FormSec() {
             </label>
             <div class="mt-2.5">
               <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 type="email"
                 name="email"
                 id="email"
@@ -112,6 +169,8 @@ export default function FormSec() {
                 </svg>
               </div>
               <input
+                onChange={(e) => setPhone(e.target.value)}
+                value={phone}
                 type="tel"
                 name="phone-number"
                 id="phone-number"
@@ -129,6 +188,8 @@ export default function FormSec() {
             </label>
             <div class="mt-2.5">
               <textarea
+                onChange={(e) => setMessage(e.target.value)}
+                value={message}
                 name="message"
                 id="message"
                 rows="4"
@@ -163,6 +224,7 @@ export default function FormSec() {
         </div>
         <div class="mt-10">
           <button
+            onClick={onClickHandler}
             type="submit"
             class="block w-full rounded-md my-5 py-3 bg-red-600 lg:px-3.5 lg:py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
