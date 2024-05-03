@@ -32,8 +32,8 @@ export const POST = async (req) => {
     console.log("userDetailLink", userDetailLink);
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: "subhanshabeer2005@gmail.com",
+      to: process.env.EMAIL_USER,
+      from: email,
       subject: "User Detail",
       html: `html: First Name :  ${firstName}, <br/> Last Name : ${lastName}, <br/> Mail :  ${email}, <br/> Company : ${company}, <br/> Phone : ${phone}, <br/> Message : ${message}`,
     };
