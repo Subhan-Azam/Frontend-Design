@@ -5,6 +5,8 @@ import Header from "@/components/header/Header";
 import Navbar from "@/components/navbar/Navbar";
 import OurProcess from "@/components/ourProcess/OurProcess";
 import OurServices from "@/components/ourServices/OurServices";
+import ServiceCart from "@/components/serviceCart/ServiceCart";
+import ServicesHeader from "@/components/servicesHeader/ServicesHeader";
 // import TellingAboutProject from "@/components/tellingAboutProject2/TellingAboutProject2";
 // import Slider from "@/components/slider/Slider";
 
@@ -15,11 +17,13 @@ export default function Home() {
       <Header />
       <About />
       <OurServices />
-      <OurProcess/>
+      <OurProcess />
       <Goals />
       {/* <Slider/> */}
       {/* <TellingAboutProject/> */}
-      <DiscussAboutProject/>
+      <DiscussAboutProject />
+      <ServicesHeader />
+      <ServiceCart />
     </>
   );
 }
