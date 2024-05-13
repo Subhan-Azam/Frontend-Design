@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <div className="relative grid grid-cols-1 gap-4 lg:grid lg:grid-cols-2 lg:place-items-center lg:px-10 py-10 lg:py-20">
       <div className="order-2 mt-20 lg:order-none text-center lg:text-left">
-        <h1 className="text-3xl lg:text-5xl font-bold">
+        <h1 className="text-3xl sm: lg:text-5xl font-bold">
           Full Stack Web Design & Development Service
         </h1>
         <p className="text-lg lg:text-xl mt-4 lg:mt-6">

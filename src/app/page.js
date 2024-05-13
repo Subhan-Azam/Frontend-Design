@@ -7,6 +7,7 @@ import OurProcess from "@/components/ourProcess/OurProcess";
 import OurServices from "@/components/ourServices/OurServices";
 import ServiceCart from "@/components/serviceCart/ServiceCart";
 import ServicesHeader from "@/components/servicesHeader/ServicesHeader";
+import VideoHeader from "@/components/videoHeader/VideoHeader";
 // import TellingAboutProject from "@/components/tellingAboutProject2/TellingAboutProject2";
 // import Slider from "@/components/slider/Slider";
 
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <VideoHeader />
       <Header />
       <About />
       <OurServices />
